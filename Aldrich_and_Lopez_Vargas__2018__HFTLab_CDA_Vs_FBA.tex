@@ -5,7 +5,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 
-%% Sets page size and margins
+%% Sets page size and marginsp
 \usepackage[letterpaper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 %% Spacing
@@ -69,7 +69,7 @@ The results reflect the authors' view -- the ERC is not responsible for any use 
 \author{
   Eric M. Aldrich\thanks{
   Email: ealdrich@ucsc.edu.} \\
-  \normalsize{Department of Economics} \\
+  \normalsize{Department of   Economics} \\
   \normalsize{University of California, Santa Cruz}
 \and
   Kristian López Vargas\thanks{
@@ -94,7 +94,7 @@ We implement a laboratory financial market where traders can access costly techn
 
 \noindent \textbf{Keywords:} Market design, Auctions, High-Frequency Trading, Continuous Double Auction, Frequent Batch Auction.
 
-\noindent \textbf{JEL Classification:} C91, D44, D47, D53, G12, G14.\\
+\noindent \textbf{JEL Classification:} C91, D44, D47, D53, G12, G14.
 
 \renewcommand{\baselinestretch}{2}
 
@@ -192,7 +192,14 @@ Equations \eqref{eq:CDAmakerProfit} and \eqref{eq:CDAsniperProfit} endogenously 
 \end{align}
 Equation \eqref{eq:BCS1}, which is the difference of Equations \eqref{eq:CDAmakerProfit} and \eqref{eq:CDAsniperProfit}, determines $s^*$ and Equation \eqref{eq:BCS2}, which is the sum of Equation \eqref{eq:CDAmakerProfit} and $N-1$ times Equation \eqref{eq:CDAsniperProfit}, determines $N^*$ for a given $s^*$. \cite{Budish2015} interpret Equation \eqref{eq:BCS2} as showing that the cost of speed, purchased by all traders, is borne entirely by investors via transactions with market makers.
 
-All traders purchase fast communication technology in the CDA equilibrium to either prevent severe loss (maker) or to prevent exclusion from profits (snipers). Abstaining from fast communication is not a profitable deviation: a slow maker increases his chances of getting sniped by $1/N$ and a slow sniper reduces her sniping chances to zero.
+All traders purchase fast communication technology in the CDA equilibrium to either prevent severe loss (maker) or to prevent exclusion from profits (snipers). Abstaining from fast communication is not a profitable deviation: a slow maker increases his chances of getting sniped by $1/N$ and a slow sniper reduces her sniping chances to zero. \footnote{ 
+\cite{Budish2015} paper focuses entirely on static or instantaneous Nash Equilibrium. It is possible that an equilibrium with cooperation can be sustain. We do not attempt to derive such an equilibrium but, given the number of players interacting in these markets (and in the experiment), we argue that both theoretically and empirically such an outcome is unlikely to be sustainable. See Appendix section \ref{sec:collusiveEq} for the corresponding discussion.
+We thank the editor for encouraging us to discuss the possibility of collusive play.
+% To the best of our knowledge, there is no theoretical prediction from a continuous-time undercutting game with more than three players from which we can provide a clear prediction for this format. There is however, interesting results on the two-player prisoner dilemma that, if portable, would predict that players would cooperate 
+}
+
+ 
+
 
 \subsubsection{Frequent Batch Auction}
 In a Frequent Batch Auction (FBA), the trading day is divided into submission stages of equal length $\tau$. These submission stages are referred to as \textit{batching intervals} or \textit{batches} and can be considered discrete time increments. Within a batch, traders communicate with the exchange in continuous, sealed-bid fashion in order to privately submit, modify and cancel limit orders, which are collected and held by the FBA matching engine. 
@@ -214,7 +221,7 @@ Under certain conditions, the BCS equilibrium for FBA consists of all traders ch
 \end{align}
 there is no incentive for traders to take the role of a fast sniper in the FBA. Intuitively, the left-hand-side of Equation \eqref{eq:BCSFBA} is the profit attributed to a fast sniper who successfully exploits a unit share posted by a slow market maker when a jump occurs in the interval $\delta$: $\frac{\delta}{\tau} \cdot \lambda_V$ represents the probability of a value jump in the short interval $\delta$ and $E\left[J | J>0\right]$ represents the magnitude of the gain (when $s^*=0$). Since there are no fast snipers in the market, the need for high-speed communication technology vanishes.  Competition focuses purely among makers on price (à la Bertrand) and dictates that all market makers undercut each other until $s^* = 0$ (all bids and offers are set to equal the observed fundamental value, $V$). 
 
-It is important to note that, as in the CDA, makers earn profits in the FBA by transacting with investors. However, since investors submit the best bids and offers within a batching period, the FBA auction often pairs their orders together as transactions. As a result, makers only transact with investors when the number of buying investors within a batch differs from the number of selling investors. Such transactions occur at the market clearing price, $p^*$, which is weakly lower (higher) than  the best bid (offer). Thus, for a given set of player strategies in the market, there are two reinforcing channels by which makers earn lower transaction profits in the FBA relative to the CDA: (1) fewer investor transactions and (2) transactions prices that are closer to the fundamental value of the asset. This reduction in profits is partially offset by smaller losses to sniping.
+It is important to note that, as in the CDA, makers earn profits in the FBA by transacting with investors. However, since investors submit the best bids and offers within a batching period, the FBA auction often pairs their orders together as transactions. As a result, makers only transact with investors when the number of buying investors within a batch differs from the number of selling investors. Such transactions occur at the market clearing price, $p^*$, which is weakly lower (higher) than  the best bid (offer). Thus, for a given set of player strategies in the market, there are two reinforcing channels by which makers earn lower transaction profits in the FBA relative to the CDA: (1) fewer investor transactions and (2) transactions prices that are closer to the fundamental value of the asset. This reduction in profits is partially offset by smaller losses to sniping.\footnote{Similar to the CDA case, there is the possibility of cooperative equilibria in the FBA. In the Appendix \ref{sec:collusiveEq}, we argue that collusive play is unlikely due to the number or players in each market.}
 
 \subsection{Architecture}
 
@@ -270,7 +277,7 @@ Traders were informed in the instructions about the potential size of the market
 
 \subsection{Procedures}
 
-Sessions were conducted at the LEEPS Laboratory of the University of California, Santa Cruz. Recruitment was implemented through LEEPS' ORSEE instance (\url{econlab.ucsc.edu}; \cite{Greiner2015}). Instructions were provided on the computer screen. After 15 to 20 minutes of reading instructions, a trial round of 90 seconds was launched during which subjects tested the interface with the understanding that their actions were not being recorded and would not comprise part of the formal experiment. Subjects were then given the option to publicly ask questions to the experimenters. The remainder of the session consisted of eight trading periods of four minutes. 
+Sessions were conducted at the LEEPS Laboratory of the University of California, Santa Cruz. Recruitment was implemented through LEEPS' ORSEE instance (\url{econlab.ucsc.edu}; \cite{Greiner2015}). Instructions were provided on the computer screen.\footnote{Instructions were extensively discussed and piloted (with students and colleagues) to achieve a balance between clarity and reasonable extension.} After 15 to 20 minutes of reading instructions, a trial round of 90 seconds was launched during which subjects tested the interface with the understanding that it was a trial round -- their actions in that round had no consequences for their earnings and would not comprise part of the formal experiment. Subjects were then given the option to publicly ask questions to the experimenters. The remainder of the session consisted of eight trading periods of four minutes. 
 In between trading periods, subjects received a summary screen displaying the distribution and profits of different roles in the corresponding trading period. Each participant received 20 experimental currency units (ECUs) as initial endowment at the beginning of each trading period and final payments were based on the final wealth of a randomly chosen period, using an exchange rate of two ECUs per dollar, plus a \$7 participation fee. The information was provided to subjects in the written instructions. 
 %
 Although ending a trading period with negative profits was possible (i.e., losing 20 ECUs in the period), this happened only in 1.3\% of the cases and subjects never left the laboratory with less than \$7.
@@ -281,27 +288,93 @@ Members of a group (market) were not able to communicate with each other before,
 
 We compare the CDA and FBA market institutions with the following metrics: (1) market liquidity, measured by the fraction of traders who choose to be \textit{market makers}, which is a surrogate for the depth of the order book in this environment; (2) the prevalence of predatory behavior, measured by the fraction of traders who choose to be \textit{snipers}; (3) the penetration of high-speed communication technology in the market, measured by the fraction of traders that choose to subscribe to this service; and (4) transaction costs for investors, measured by the minimum spread among market makers. We also study other auxiliary metrics associated with volatility (e.g.,  the standard deviation of the minimum spread) and informational efficiency (such as the root mean squared deviation between realized prices and fundamental value). Measures of allocative efficiency are less relevant for this paper because we are dealing with a common value asset. 
 
-Prior to reporting our experimental results, several observations are in order. First, one of the CDA sessions (configuration 3) was terminated after 7 (rather than 8) periods because the 1.5-hour session time limit was reached. This affected two of the four markets for that configuration. Second, in certain circumstances, order repricing for market makers resulted in maker-to-maker sniping events. Appendix~\ref{makerSniping} describes these transactions in more detail and shows that they do not affect the BCS equilibrium. We discovered maker-to-maker snipes during initial pilot sessions and decided not to eliminate them, since doing so would violate typical order book rules. However, we did not explicitly acknowledge this feature in the experiment instructions, instead allowing subjects to observe the consequences of these events on their profit and decision screens. Finally, after collecting our experimental data, we discovered that the FBA exchange did not randomize transaction allocation for orders received within the same batch and at the same price. Under FBA, time priority should not exist for orders received by the exchange during the same batching period; such priority should only exist for orders received in prior batches and which have not been filled. 
-Although this is a violation of the FBA matching mechanism, it affected a very small fraction of orders (only those with identical prices within a single batch) and, at worst, provided an increased incentive to purchase fast communication services (which is not the equilibrium). Revising the system to allow for randomization of orders during auctions would potentially yield results that are even more congruent with predicted equilibria.
+Prior to reporting our experimental results, several observations are in order. First, one of the CDA sessions (configuration 3) was terminated after 7 (rather than 8) periods because the 1.5-hour session time limit was reached. This affected two of the four markets for that configuration. Second, in certain circumstances, order repricing for market makers resulted in maker-to-maker sniping events. Appendix~\ref{makerSniping} describes these transactions in more detail and shows that they do not affect the BCS equilibrium. We discovered maker-to-maker snipes during initial pilot sessions and decided not to eliminate them, since doing so would violate typical order book rules. However, we did not explicitly acknowledge this feature in the experiment instructions, instead allowing subjects to observe the consequences of these events on their profit and decision screens. Finally, after collecting our experimental data, we discovered that the FBA exchange did not randomize transaction allocation for orders received within the same batch and at the same price. 
+Under FBA, time priority should not exist for orders received by the exchange during the same batching period; such priority should only exist for orders received in prior batches and which have not been filled. 
+\hl{Although this is a violation of the FBA matching mechanism, this rule change does not have a material impact on market outcomes for the following reasons. First, in the FBA, the protection for market makers from snipers comes mainly from having a batch length substantially larger than the latency differential between fast and slow traders, and not from the random priority of orders at same price within a batch. Second, this rule change affected a very small fraction of orders (only those with identical prices within a single batch) and, at worst, provided an increased incentive to purchase fast communication services (which is not the equilibrium and it is not the prevalent behavior in our experiments).}
+Revising the system to allow for randomization of orders during auctions would potentially yield results that are even more congruent with predicted equilibria.
 
 \subsection{Subject Choices}
-Figure~\ref{fig:allPlots} depicts the four summary measures, averaged across all groups within a given treatment. The faint, solid lines represent average values computed at five-second intervals and bold, solid lines represent exponentially-weighted moving averages with ten-second half lives. Dashed lines represent equilibrium values under the BCS model. Each panel of the plot depicts the full time series for a session, concatenating the metrics across the eight four-minute periods, which are visually separated by alternating gray and white vertical bands. To smooth start-up effects within periods, in which players' default state is "Out", we do not include the first ten seconds of each period in the plot.
+
+To quantify treatment effects on choices made by subjects, we estimate the following model: 
+\begin{align} \label{eq:RegSpec}
+y_{g,t} & = \sum_{j=1}^{3} \left[ \alpha_j Cj_{g,t} + \gamma_j  Cj \times FBA_{g,t}   \right]  + \epsilon_{g,t},
+\end{align}
+where $y_{g,t} \in \{Maker_{g,t},Sniper_{g,t},Speed_{g,t},MinSpread_{g,t}\}$ is indexed by group and time, $Cj$ is a dummy variable for market configuration $j \in \{1,2,3\}$, and $Cj \times FBA_{g,t}$ is the dummy variable indicating  the interaction between configuration $j$ and the FBA format. 
+In this context, since there is no constant in the regression, $\alpha_j$ captures the mean of $y$ in CDA configuration $j$, and $\gamma_j$ captures the FBA - CDA mean difference for $y$ in configuration $j$. 
+We estimate this model using a three-second time resolution, excluding the first ten seconds of each period to account for starting effects, and the first two periods of each session to account for possible learning. The estimation was done by combining data for all formats and configurations.  The coefficients are OLS estimates and standard errors are cluster-robust at the group level.  The regression results are reported in Table \ref{tab:Regressions}. 
+\begin{table}
+\centering
+\begin{tabular}{l*{5}{c}}
+\toprule
+&\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}      &\multicolumn{1}{c}{ (3)}     &\multicolumn{1}{c}{(4)}    &\multicolumn{1}{c}{(5)}         \\
+&\multicolumn{1}{c}{Maker (\%)}         &\multicolumn{1}{c}{Sniper (\%)}         &\multicolumn{1}{c}{Speed (\%)}         &\multicolumn{1}{c}{Min. Spread}         &\multicolumn{1}{c}{RMSD}         \\
+\midrule
+Configuration 1                  &       54.13\sym{***}&       30.89\sym{***}&       56.12\sym{***}&       0.226\sym{***}&       0.347\sym{***}\\
+                    &     (1.640)         &     (2.959)         &     (2.972)         &    (0.0438)         &   (0.00474)         \\
+[1em]
+Configuration 2                  &       30.27\sym{***}&       58.11\sym{***}&       69.20\sym{***}&       0.678\sym{***}&       0.512\sym{***}\\
+                    &     (4.507)         &     (3.294)         &     (1.594)         &     (0.114)         &   (0.00918)         \\
+[1em]
+Configuration 3                  &       40.03\sym{***}&       49.51\sym{***}&       69.02\sym{***}&       0.706\sym{***}&       0.460\sym{***}\\
+                    &     (2.368)         &     (2.888)         &     (4.498)         &    (0.0374)         &    (0.0170)         \\
+[1em]
+FBA $\times$ Config. 1         &       24.88\sym{***}&      -10.95\sym{*}  &      -36.15\sym{***}&      -0.123\sym{**} &      -0.135\sym{***}\\
+                    &     (5.022)         &     (5.507)         &     (5.399)         &    (0.0439)         &    (0.0119)         \\
+[1em]
+FBA $\times$ Config. 2   &       49.08\sym{***}&      -44.23\sym{***}&      -37.82\sym{***}&      -0.502\sym{***}&      -0.102\sym{***}\\
+                    &     (6.494)         &     (6.214)         &     (3.968)         &     (0.118)         &    (0.0307)         \\
+[1em]
+FBA $\times$ Config. 3         &       33.10\sym{***}&      -35.55\sym{***}&      -48.37\sym{***}&      -0.560\sym{***}&     -0.0791\sym{***}\\
+                    &     (5.255)         &     (4.309)         &     (5.024)         &    (0.0422)         &    (0.0246)         \\
+\midrule
+Observations        &       10934         &       10934         &       10934         &       10934         &         142         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\caption{\label{tab:Regressions} {\small OLS estimates for Equation~\eqref{eq:RegSpec}. The dependent variables in models 1--3 are, respectively, the average percentage of traders choosing to be makers,  snipers, and subscribers to speed services. The dependent variables in models 4 and 5 are, respectively, the average minimum spread and the market-level RMSD. The regressions for all dependent variables except RMSD are conducted with data at the three-second resolution. We exclude the first ten seconds of each period and the first two periods of each session to account for starting effects. Group-level clustered standard errors are reported in parentheses.}}
+\end{table}
+
+\subsubsection*{Result 1: More subjects choose to be market makers under FBA.}
+Model 1 of Table~\ref{tab:Regressions} shows that the fraction of market makers is between 25\% and 50\% higher under FBA than CDA, with higher values associated with configurations 2 and 3.
+Recall that relative to configuration 1, the market under configuration 2 experiences jumps in the fundamental value roughly four times more often, has $40\%$ fewer investors, and has nearly identical cost of speed. Configuration 3, on the other hand, also has four times as many jumps in the fundamental value, but receives 1.5 times the number of investors, and has double the cost of speed. Thus, both configurations 2 and 3 can be regarded as volatile markets, which is costly to market makers, but configuration 3 partly compensates makers with additional income through investors, whereas configuration 2 provides even lower investor income, relative to the baseline calibration. In addition, under configuration 3, all subjects bear a higher cost of speed (makers and snipers). Thus, the results in Table 1 suggest that increased market making under FBA is positively related to volatile environments and fewer investors.
+
+Since market makers are constrained to limit orders of unit size, the fraction of subjects acting as market makers is a direct measure of liquidity or market depth. Hence, the regression results demonstrate that FBA has a positive effect on liquidity that is statistically significant. Moreover, separate tests of the hypotheses $\gamma_2 > \gamma_1$ and  $\gamma_3=\gamma_1$ cannot be rejected at the 1\% level, suggesting the liquidity improving effect of the FBA is highest in the most volatile regime with few investor arrivals.
+
+The first row of plots in Figure~\ref{fig:allPlots} depict time series of the fraction of market makers, averaged across all groups within a given treatment. The faint, solid lines represent average values computed at five-second intervals and bold, solid lines represent exponentially-weighted moving averages with ten-second half lives. 
+Dashed lines represent equilibrium values under the BCS model. Each panel of the plot depicts the full time series for a session, concatenating the metrics across the eight four-minute periods, which are visually separated by alternating gray and white vertical bands. To smooth start-up effects within periods, in which players' default state is "Out", we do not include the first ten seconds of each period in the plot.
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{img/allPlots.png}
-\caption{Time series of subjects' actions: strategies, speed subscriptions and minimum spread. {\small In each box, we plot traders' strategies in CDA (blue lines) and FBA (green lines). Each column of the figure represents a market configuration and each row represents a variable related to the average of the outcome across groups. The dashed lines correspond to theoretical equilibrium values predicted by the BCS model. Faint solid lines correspond to observed time series sampled at five-second intervals and bold solid lines are their exponentially-weighted moving averages with a ten-second half life.} \label{fig:allPlots} } 
+\caption{Time series of subjects' actions: strategies, speed subscriptions and minimum spread. {\small In each box, we plot traders' strategies in CDA (blue lines) and FBA (green lines). Each column of the figure represents a market configuration and each row represents a variable related to the average of the outcome across groups. 
+The dashed lines correspond to theoretical equilibrium values predicted by the BCS model. Faint solid lines correspond to observed time series sampled at five-second intervals and bold solid lines are their exponentially-weighted moving averages with a ten-second half life.} \label{fig:allPlots} } 
 \end{figure}
 
-The blue lines in Figure~\ref{fig:allPlots} correspond to equilibrium and observed values under CDA. For the first three metrics, the BCS equilibrium values are constant across configurations: the percentage of makers is predicted to be $\frac{1}{N}*100 = 100/6 = 16.67\%$, the percentage of snipers is predicted to be $\frac{5}{N}*100 = 500/6 = 83.33\%$, and the percentage of players buying speed services should be $100\%$. For the final metric, equilibrium spread, the values for each configuration (reported in Section~\ref{sec:treatments}) are $s^*=0.324, 0.566$ and $0.475$ for configurations 1, 2 and 3, respectively. The green lines in the figure correspond to equilibrium and observed values under FBA. The predicted BCS equilibrium values for all four metrics are constant across configurations: $100\%$ market makers, $0\%$ snipers, $0\%$ purchasing speed services and $s^*=0$.
+The blue lines in Figure~\ref{fig:allPlots} correspond to equilibrium and observed values under CDA and the green lines correspond to those of the FBA. Under BCS, the equilibrium number of makers in the CDA is predicted to be $\frac{1}{N}*100 = 100/6 = 16.67\%$ for all configurations, whereas the the FBA equilibrium is $100\%$ for all configurations.
+In magnitude, the fraction of makers fails to achieve the equilibrium values, but the time series show a separation in the direction of the predicted equilibria: for all configurations the fraction of makers is higher under FBA, and the magnitude of the difference is larger under the volatile configurations, 2 and 3. Interestingly, the fraction of FBA market makers is relatively constant across configurations, and the increased difference in market making under those configurations is largely related to a diminished fraction of makers in the CDA. To the extent that the five-second averages exhibit accurate variation in the data, the time series show a clear statistical separation.
 
-Qualitatively, the time series show a separation in the direction of the predicted equilibria: for all configurations (1) the fraction of makers is higher under FBA, (2) the fraction of snipers is lower under FBA, (3) the fraction of traders purchasing speed services is lower under FBA, and (4) the equilibrium spread is lower under FBA. In some cases, the data suggest mild evidence of learning during the first 2 or 3 periods, and in nearly all cases the time series show a clear statistical separation (to the extent that the five-second averages exhibit accurate variation in the data) after the initial learning period, if not before. In magnitude, few of the observed metrics achieve equilibrium values, with the consistent exception of the FBA spread. In this case, the observed values remained at or near the floor of 0.1 ECUs implemented in the lab interface.
+% This might be a good spot to note evidence of learning in the time series.
+We should note that we find a mild evidence of learning. Our data shows that subjects behavior in the first two periods was shifting (in some variables until the third period) and mostly stabilize after that. See Figure 3 in the paper. This learning behavior is slightly different between formats. In FBA, for example, the average number of role changes in the first two periods is 11.4 and in the rest of the periods goes down 7.33. In the CDA the number of role changes is higher (consistent with the coordination issues of the predicted equilibrium) and stable in all periods. The prevalence of market making, on the other hand, is declining in the first periods of CDA markets but stable along the whole session in the FBA markets. 
 
-Recall that relative to configuration 1, the market under configuration 2 experiences jumps in the fundamental value roughly four times more often, has $40\%$ fewer investors, and has nearly identical cost of speed. Configuration 3, on the other hand, also has four times as many jumps in the fundamental value, but receives 1.5 times the number of investors, and has double the cost of speed. Thus, both configurations 2 and 3 can be regarded as volatile markets, which is costly to market makers, but configuration 3 partly compensates makers with additional income through investors, whereas configuration 2 provides even lower investor income, relative to the baseline calibration. In addition, under configuration 3, all subjects bear a higher cost of speed (makers and snipers). 
+\subsubsection*{Result 2: Fewer subjects choose to be snipers under FBA.}
+Predatory behavior (the fraction of traders acting as snipers), reported in model 2 of Table~\ref{tab:Regressions}, is substantially lower for all FBA configurations relative to the CDA, with the difference falling in the range $[10\%,44\%]$.
+Notably, the total population of snipers is much higher in the CDA for the volatile configurations (C2 and C3) , and lower in the FBA for those same configurations.
+Again, tests of the hypotheses $\gamma_2 > \gamma_1$ and  $\gamma_3=\gamma_1$ cannot be rejected at the 1\% level, suggesting that the FBA has a greater impact on discouraging sniping in the most volatile regime with few investors.
 
-Accordingly, the time series show that the fraction of market makers under CDA (FBA) configuration 2 is lowest (highest), corroborating that the costs of providing liquidity is highest in that configuration and that FBA offers the most protection in those circumstances. Similarly, the fraction of snipers and the fraction of traders purchasing speed technology under CDA configuration 2 is higher than CDA configuration 1, and weakly higher than CDA configuration 3. For FBA, the observed fraction of snipers and fraction of traders purchasing speed in configuration 2 are equal to or lower than those values in the other configurations. Generally speaking, the observations for configuration 3 lie between those of configurations 1 and 2, as would be anticipated from the high volatility coupled with somewhat higher investor income to makers (yet, despite the high cost of speed, which should have a greater effect under CDA). In each case, the observed spreads do a reasonable job of tracking predicted equilibria, although CDA configuration 3 is notably high.
+The BCS model predicts the equilibrium percentage of snipers to be $\frac{5}{N}*100 = 500/6 = 83.33\%$ under CDA and $0\%$ under FBA, for all configurations. These values are depicted as blue and green (respectively) dashed lines in the second row of plots in Figure~\ref{fig:allPlots}. As with the percentage of market making, the time series in those plots do not achieve the equilibrium values, but exhibit a clear separation in the direction of the equilibria, with only marginal separation for configuration 1. Again, similar to the percentage of market makers, the difference in the FBA - CDA percentages of snipers is larger in volatile environments with fewer investors.
 
-Panel (b) of Table~\ref{tab:Summary} reports summary statistics for the metrics outlined above, sampled at one-second intervals, averaged across both time and groups and within treatment. As with Figure~\ref{fig:allPlots}, we exclude the first ten seconds of each four-minute period in order to eliminate start-up effects, and we also exclude the first two periods of each session, to account for learning. 
+\subsubsection*{Result 3: Fewer subjects purchase speed under FBA.}
+Model 3 of Table~\ref{tab:Regressions} shows that purchases of speed services are consistently lower under FBA. Specifically, the total fraction of traders purchasing speed services under CDA falls in the range $[56\%,69\%]$, while the FBA - CDA differences are in the range $[-48\%, -36\%]$. Equilibrium predictions, that $\alpha_j=100$ and $\gamma_j=-100$ for $j\in\{1,2,3\}$, are rejected at the 1\% level.
 
+The BCS model predicts the equilibrium percentage of players purchasing speed services to be $100\%$ under CDA and $0\%$ under FBA, for all configurations. These values are depicted as blue and green (respectively) dashed lines in the third row of plots in Figure~\ref{fig:allPlots}. Similar to the metrics discussed above, the time series in those plots do not achieve the equilibrium values, but exhibit a clear separation in the direction of the equilibria, and the magnitudes of the differences are slightly larger for configurations 2 and 3.
+
+\subsubsection*{Result 4: Minimum spreads are lower under FBA.}
+Transactions costs, measured by the average minimum spread, are predicted by the BCS model to be $s^*=0.324, 0.566$ and $0.475$ for configurations 1, 2 and 3, respectively, in the CDA (see Section~\ref{sec:treatments}) and $s^*=0$ for all configurations in the FBA. Model 4 in Table~\ref{tab:Regressions} shows that observed values are close to the minimum increment of 0.1 ECUs in FBA, while the average CDA spreads are much higher and closer to their theoretical counterparts.\footnote{Our lab interface implemented a minimum spread of 0.1 ECUs.} The FBA - CDA differences in spread were $-0.123$,  $-0.502$, and $-0.560$ ECUs, respectively for C1, C2 and C3, and serve as upper bounds for the differences, since they exclude the many investor-to-investor transactions at the fundamental value (zero spread) that occur in the FBA when an equal number of buy and sell investors arrive within one batch.
+In general, these differences closely track equilibrium values: for C2 we do not reject the null hypothesis that $\alpha_1=.566$ and $\gamma_1=-0.46$, while for C1 and C3, the minimum spread values are close to, but statistically distinct from, equilibrium levels.
+Despite this, a key comparative static across CDA configurations holds in the data: CDA-C2 and CDA-C3 both have statistically higher minimum spread relative to CDA-C1. 
+
+The BCS equilibrium minimum spreads are depicted as blue (CDA) and green (FBA) dashed lines in the fourth row of plots in Figure~\ref{fig:allPlots}. The observed time series are largely congruent with those values, both in direction and magnitude. Perhaps most interesting is the fact that observed FBA spreads consistently remained at or near the floor of 0.1 ECUs implemented in the lab interface.
+
+Panel (b) of Table~\ref{tab:Summary} reports summary statistics for the metrics outlined above, sampled at one-second intervals, averaged across both time and groups and within treatment. As with Figure~\ref{fig:allPlots}, we exclude the first ten seconds of each four-minute period in order to eliminate start-up effects, and we also exclude the first two periods of each session, to account for learning. Congruent with the results above, those values demonstrate that under the FBA (1) more traders choose to act as makers, (2) fewer choose to act as snipers, (3) fewer choose to purchase speed services, and (4) minimum spreads are smaller.
 \begin{table}
 \centering
 \scalebox{0.9}{
@@ -366,7 +439,14 @@ $c_{speed}$  		& &  \multicolumn{2}{c}{0.01} &  \multicolumn{2}{c}{0.01} &  \mul
 \caption{Summary statistics for experimental data. \small Panel (a) Shows the parameters of the three configurations we use in the experiments. Panel (b) reports the average percentage of subjects acting as market makers, snipers, average percentage of subjects purchasing speed services, and the average minimum spread posted by market makers. Values are sampled at three-second intervals and averaged across time and subjects within each treatment. Predicted equilibrium values are reported below observed averages. Panel (c) reports summary measures related to volatility (standard deviation of price changes and minimum spread, number of strategy/role changes), informational efficiency (root mean squared deviation from price to fundamental value),  volume (number of transactions), and profits. For both panels, we exclude the first ten seconds of each period and the first two periods of each session to account for starting effects. \label{tab:Summary}}
 \end{table}
 
-Consistent with Figure~\ref{fig:allPlots}, the values in panel (b) of Table~\ref{tab:Summary} demonstrate that, relative to the CDA, under the FBA (1) more traders choose to act as makers, (2) fewer choose to act as snipers, (3) fewer choose to purchase speed services, and (4) minimum spreads are smaller. We provide a detailed discussion of these values in Section~\ref{regression}, in the context of a regression analysis which measures the difference in means across market formats.
+% collusive play.
+Although BCS discussed equilibrium for this repeated games is based on the "naive" extension of the static Nash equilibrium at each instant (stage) for the CDA (FBA), there is the possibility of collusive behavior in our experimental markets. 
+In Appendix \ref{sec:collusiveEq} we discuss the form collusive play would take and the relevant literature. Our data indicates, however, that that human trades in both market formats exhibited behavior more congruent with competitive, rather than collusive, play. Collusive play in these undercutting games (both CDA and FBA) would imply prevalence of market making at maximum spreads and no purchase of speed. 
+Instead we observe that most markets operated closer to competitive play: market spreads were always around the competitive equilibrium predictions far away from collusive behavior prediction. 
+In the case of the FBA, the market spread was almost every time against the lower bound of the admissible spread in the computer interface. 
+In the case of CDA, although market making was significantly more common than the static Nash equilibrium prediction, majority of traders subscribed to speed and, again, spreads were around the competitive equilibrium, far away from collusive play (see Appendix \ref{sec:collusiveEq} for further discussion). 
+All this is consistent with the theoretical insight and empirical findings of existing literature suggesting that cooperation is rarely observed when the game has three or more players.
+
 
 \subsection{Market Statistics}
 \label{marketStatsSection}
@@ -377,6 +457,13 @@ Rows 3-6 of panel (c) report volatility measures related to traders' choices: th
 The model, however, makes no theoretical statement about frequency of strategy switching in the CDA since it only demands a fixed strategy profile in aggregate, while under the FBA there should be no switching since all traders play an identical strategy. Empirically, status changes are between two and 3.5 times greater under the CDA configurations, relative to FBA. The coordination difficulties that can only arise in the CDA are compatible with the CDA exhibiting a higher number of strategy changes than the FBA.
 
 Rows 7 and 8 of panel (c) report the root mean squared deviation (RMSD\footnote{\label{footnoteRMSD} $RMSD = \sqrt[]{\frac{\sum(P_t-V_t)^2}{N_{trans}}}$, where $N_{trans}$ represents the number of transactions within a trading period.}) of transaction prices relative to the contemporaneous fundamental value. We derive the equilibrium equations that govern these values under CDA and FBA in Propositions~\ref{rmsdCDA} and \ref{rmsdFBA}, and report those values for each experimental configuration in the eighth row of panel (c). The theoretical CDA values range from 0.223 to 0.372 ECUs, while the FBA values are between 1.3 and 1.6 times smaller, ranging between 0.136 and 0.276 ECUs. Empirically, the RMSDs are between 1.2 and 1.9 times larger than their theoretical counterparts, with the CDA values consistently larger than those under FBA.
+
+To additionally measure the effect of treatments on RMSD, Model 5 of Table~\ref{tab:Regressions} reports the following regression:
+\begin{align} \label{eq:RegSpecRMSD}
+RMSD_h & = \sum_{j=1}^{3} \left[ \alpha_j Cj_{h} + \gamma_j  Cj_{h} \times FBA_{h}   \right]  + \epsilon_{h}.
+\end{align}
+The regression is fit at the level of trading period and group ($h$), and therefore utilizes 142 observations.\footnote{Six treatments with four groups each, trading in periods 3-8, less two group-periods because of the session that stopped after period seven.} 
+Consistent with the equilibrium predictions outlined in above, RMSD is lower under FBA. Specifically, RMSD under CDA is in the range $[0.347,0.512]$, while the FBA - CDA differences are in the range $[-0.135, -0.0791]$. 
 
 Rows 9 and 10 of panel (c) report the number of transactions and trading profits earned by makers and snipers during the experiment. In equilibrium, the number of CDA transactions should be
 \begin{align}
@@ -394,71 +481,6 @@ Although the BCS environment is not suited for studying measures of allocative e
 It is also important to note that the purchase of speed is a measure of deviation from Pareto efficiency. Since traders improve profits off by collectively abstaining from speed purchases, increased use of fast communication technology is associated with social waste. This is due to the fact that $V(t)$ is publicly observable: in such an environment, faster communication technology serves no purpose in acquiring more or better information. 
 
 In summary, the measures in panel (c) of Table~\ref{tab:Summary} show that the FBA reduces the volatility of transaction prices and minimum spreads, enhances price efficiency, results in more stable trader choices, and is more closely aligned with equilibrium profits.
-
-\subsection{Treatment Effects}
-\label{regression}
-
-To quantify treatment effects, we estimate the following model: 
-\begin{align} \label{eq:RegSpec}
-y_{g,t} & = \sum_{j=1}^{3} \left[ \alpha_j Cj_{g,t} + \gamma_j  Cj \times FBA_{g,t}   \right]  + \epsilon_{g,t},
-\end{align}
-where $y_{g,t} \in \{Maker_{g,t},Sniper_{g,t},Speed_{g,t},MinSpread_{g,t}\}$ is indexed by group and time, $Cj$ is a dummy variable for market configuration $j \in \{1,2,3\}$, and $Cj \times FBA_{g,t}$ is the dummy variable indicating  the interaction between configuration $j$ and the FBA format. 
-In this context, since there is no constant in the regression, $\alpha_j$ captures the mean of $y$ in CDA configuration $j$, and $\gamma_j$ captures the FBA - CDA mean difference for $y$ in configuration $j$. 
-We estimate this model using a three-second time resolution, excluding the first ten seconds of each period and the first two periods of each session to account for starting effects. The estimation was done by combining data for all formats and configurations.  The coefficients are OLS estimates and standard errors are cluster-robust at the group level.  The regression results are reported in Table \ref{tab:Regressions}. 
-
-\begin{table}
-\centering
-\begin{tabular}{l*{5}{c}}
-\toprule
-&\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}      &\multicolumn{1}{c}{ (3)}     &\multicolumn{1}{c}{(4)}    &\multicolumn{1}{c}{(5)}         \\
-&\multicolumn{1}{c}{Maker (\%)}         &\multicolumn{1}{c}{Sniper (\%)}         &\multicolumn{1}{c}{Speed (\%)}         &\multicolumn{1}{c}{Min. Spread}         &\multicolumn{1}{c}{RMSD}         \\
-\midrule
-Configuration 1                  &       54.13\sym{***}&       30.89\sym{***}&       56.12\sym{***}&       0.226\sym{***}&       0.347\sym{***}\\
-                    &     (1.640)         &     (2.959)         &     (2.972)         &    (0.0438)         &   (0.00474)         \\
-[1em]
-Configuration 2                  &       30.27\sym{***}&       58.11\sym{***}&       69.20\sym{***}&       0.678\sym{***}&       0.512\sym{***}\\
-                    &     (4.507)         &     (3.294)         &     (1.594)         &     (0.114)         &   (0.00918)         \\
-[1em]
-Configuration 3                  &       40.03\sym{***}&       49.51\sym{***}&       69.02\sym{***}&       0.706\sym{***}&       0.460\sym{***}\\
-                    &     (2.368)         &     (2.888)         &     (4.498)         &    (0.0374)         &    (0.0170)         \\
-[1em]
-FBA $\times$ Config. 1         &       24.88\sym{***}&      -10.95\sym{*}  &      -36.15\sym{***}&      -0.123\sym{**} &      -0.135\sym{***}\\
-                    &     (5.022)         &     (5.507)         &     (5.399)         &    (0.0439)         &    (0.0119)         \\
-[1em]
-FBA $\times$ Config. 2   &       49.08\sym{***}&      -44.23\sym{***}&      -37.82\sym{***}&      -0.502\sym{***}&      -0.102\sym{***}\\
-                    &     (6.494)         &     (6.214)         &     (3.968)         &     (0.118)         &    (0.0307)         \\
-[1em]
-FBA $\times$ Config. 3         &       33.10\sym{***}&      -35.55\sym{***}&      -48.37\sym{***}&      -0.560\sym{***}&     -0.0791\sym{***}\\
-                    &     (5.255)         &     (4.309)         &     (5.024)         &    (0.0422)         &    (0.0246)         \\
-\midrule
-Observations        &       10934         &       10934         &       10934         &       10934         &         142         \\
-\bottomrule
-\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-\end{tabular}
-\caption{\label{tab:Regressions} {\small OLS estimates for Equation~\eqref{eq:RegSpec}. The dependent variables in columns 1--3 are, respectively, the average percentage of traders choosing to be makers,  snipers, and subscribers to speed services. The dependent variables in columns 4 and 5 are, respectively, the average minimum spread and the market-level RMSD. The regressions for all dependent variables except RMSD are conducted with data at the three-second resolution. We exclude the first ten seconds of each period and the first two periods of each session to account for starting effects. Group-level clustered standard errors are reported in parentheses.}}
-\end{table}
-
-The coefficients in the second column of Table~\ref{tab:Regressions} show that the fraction of market makers is between 25\% and 50\% higher under FBA than CDA, with higher values associated with higher volatility in the asset value and fewer investors. Since market makers are constrained to limit orders of unit size, the fraction of subjects acting as market makers is a direct measure of liquidity or market depth. Thus, the results demonstrate that FBA has a positive effect on liquidity that is statistically significant. Moreover, separate tests of the hypotheses $\gamma_2 > \gamma_1$ and  $\gamma_3=\gamma_1$ cannot be rejected at the 1\% level, suggesting the liquidity improving effect of the FBA is highest in the most volatile regime with few investor arrivals.
-% STEFAN palan suggest we instead reject the "opposite propositions, i.e., gamma2<=gamma1 and gamma3!=gamma1?" We can do this later-- probably a referee will think likewise 
-
-Predatory behavior (the fraction of traders acting as snipers), reported in column 3 of Table~\ref{tab:Regressions}, is substantially lower for all FBA configurations relative to the CDA, with the difference falling in the range $[10\%,44\%]$.
-Notably, the total population of snipers is much higher in the CDA for the volatile configurations (C2 and C3) , and lower in the FBA for those same configurations.
-Again, tests of the hypotheses $\gamma_2 > \gamma_1$ and  $\gamma_3=\gamma_1$ cannot be rejected at the 1\% level, suggesting that the FBA has a greater impact on discouraging sniping in the most volatile regime with few investors.
-
-Column 4 of Table~\ref{tab:Regressions} shows that purchases of speed services are consistently lower under FBA. Specifically, the total fraction of traders purchasing speed services under CDA falls in the range $[56\%,69\%]$, while the FBA - CDA differences are in the range $[-48\%, -36\%]$. Equilibrium predictions, that $\alpha_j=100$ and $\gamma_j=-100$ for $j\in\{1,2,3\}$, are rejected at the 1\% level.
-
-Transactions costs, measured by the average minimum spread (fifth column in Table \ref{tab:Regressions}) are close to the minimum increment of 0.1 ECUs in FBA, while the average CDA spreads are much higher and closer to their theoretical counterparts.\footnote{Our lab interface implemented a minimum spread of 0.1 ECUs.} The FBA - CDA differences in spread were $-0.123$,  $-0.502$, and $-0.560$ ECUs, respectively for C1, C2 and C3, and serve as upper bounds for the differences, since they exclude the many investor-to-investor transactions at the fundamental value (zero spread) that occur in the FBA when an equal number of buy and sell investors arrive within one batch.
-In general, these differences closely track equilibrium values: for C2 we do not reject the null hypothesis that $\alpha_1=.566$ and $\gamma_1=-0.46$, while for C1 and C3, the minimum spread values are close to, but statistically distinct from, equilibrium levels.
-Despite this, a key comparative static across CDA configurations holds in the data: CDA-C2 and CDA-C3 both have statistically higher minimum spread relative to CDA-C1. 
-
-The last column of Table~\ref{tab:Regressions} displays a regression of the root mean squared deviation:
-\begin{align} \label{eq:RegSpecRMSD}
-RMSD_h & = \sum_{j=1}^{3} \left[ \alpha_j Cj_{h} + \gamma_j  Cj_{h} \times FBA_{h}   \right]  + \epsilon_{h}.
-\end{align}
-This regression is fit at the level of trading period and group ($h$), and therefore utilizes 142 observations.\footnote{Six treatments with four groups each, trading in periods 3-8, less two group-periods because of the session that stopped after period seven.} 
-Consistent with the equilibrium predictions outlined in Section~\ref{marketStatsSection}, RMSD is lower under FBA. Specifically, RMSD under CDA is in the range $[0.347,0.512]$, while the FBA - CDA differences are in the range $[-0.135, -0.0791]$. 
-
-In sum, the comparative statics of the differences between the two formats predicted by the model are confirmed in the data: relative to the CDA, the FBA has more makers, fewer snipers, fewer traders purchasing speed technology, lower minimum spreads and lower RMSDs.
 
 \subsection{Transitory Market Dynamics}
 
@@ -535,9 +557,9 @@ We also find that market behavior is closer to BCS predictions in more turbulent
 
 Taken together, our results suggest that the frequent batch auction is a welfare improving mechanism for allocating trade within a financial market. Such market designs are of interest to policy makers and regulators, as they reduce both volatility and dead-weight loss, and shift lost surplus to investors with fundamental portfolio needs. Further, our results suggest that exchange operators may find such alternative market designs promising, as they will inherently attract liquidity from fundamental investors and encourage fast traders to forgo expenditure on costly communication technology and instead focus their attention on liquidity provision. 
 
-We recognize that our results are as much a test of the BCS model as a comparison of the FBA and CDA formats, and that they are only relevant to the extent that the model broadly characterizes actual strategies and interactions by agents in the market (which we think it does). Beyond the relatively simple strategy space for agents in this environment, it would be useful to test the robustness of the FBA mechanism to more sophisticated behavior and complex preferences. Such behavior might include traders that place multiple-unit orders (which either deepen liquidity or have substantial price impact), investors that intelligently shred orders through time, and reactive algorithms (for both makers and snipers) that respond to other traders’ strategies rather than to changes in the environment alone. 
+We recognize that our results are as much a test of the BCS model as a comparison of the FBA and CDA formats, and that they are only relevant to the extent that the model broadly characterizes actual strategies and interactions by agents in the market (which we think it does). Beyond the relatively simple strategy space for agents in this environment, it would be useful to test the robustness of the FBA mechanism to more sophisticated behavior and complex preferences. Such behavior might include traders that place multiple-unit orders (which either deepen liquidity or have substantial price impact), investors that intelligently shred orders through time, and reactive algorithms (for both makers and snipers) that respond to other traders’ strategies rather than to changes in the environment alone. We hope the approach of this paper will generate insights for such research program, and for the development of new theory.
 
-Our experimental approach will generate insights for the development of new theory and the implementation of field experiments in future work. We believe at least two paths of research will be fruitful in advancing understanding of financial market design: first, studying alternative market formats (e.g, \cite{Kyle2017} and \cite{Aldrich2017}) in comparable laboratory environments, and second, conducting controlled field experiments that exhibit more realistic and complex features. Indeed, within the framework of a larger research project, we intend to implement a public experiment (in the form of a tournament) in which we will study different financial market institutions in a less stylized environment.
+%We believe at least two paths of research will be fruitful in advancing understanding of financial market design: first, studying alternative market formats (e.g, \cite{Kyle2017} and \cite{Aldrich2017}) in comparable laboratory environments, and second, conducting controlled field experiments that exhibit more realistic and complex features. Indeed, within the framework of a larger research project, we intend to implement a public experiment (in the form of a tournament) in which we will study different financial market institutions in a less stylized environment.
 
 %\hl{The coordination involved in the equilibrium of the CDA format in the BCS model and the higher complexity of the corresponding best response function relative to the one in FBA suggest that the degree of sophistication could be more important in the CDA than in the FBA. We leave for future research the theoretical and empirical analysis of the protection that different market formats provide to unsophisticated players.}
 
@@ -566,6 +588,8 @@ Following \citet{Aldrich2016}, we assume the trade-time distribution of asset pr
 We set $\lambda_V = 1/4$ in our baseline calibration, which leads us to interpret 1 second of lab time as $\lambda_V/\tilde{\lambda}_{V} = 5.88/4 = 1.47$ seconds of raw financial market time. Consequently, we interpret a single four-minute experimental period as approximately $4 \times 1.47 = 5.88$ minutes of financial market time, and the full eight-period session as approximately $8 \times 4 \times 1.47 \approx 47$ minutes of market time. Further, rescaling the investor intensity parameter to experimental time results in $\lambda_I = 1.47/4.68 \approx 1/3$, which is the value of our baseline calibration.
 
 To calibrate the cost of fast communication technology, $c_s$, we use the pricing schedule of McKay Brothers LLC, a premier microwave transmission service. To transmit a single symbol on the long-haul route between the CME data center in Aurora, IL to an equities data center in New Jersey costs \$10,600 per month, or about \$0.02 per second (assuming 22 trading days per month, and 6.5 trading hours per day). Scaling to experimental time, this results in about \$0.015 per second. In our baseline calibration we set $c_s = \$0.01$ per second.
+
+\newpage
 
 \section{Off-Equilibrium Sniping}
 \label{makerSniping}
@@ -696,6 +720,61 @@ To determine if a profitable deviation exists, we compare Equations~\eqref{devia
 \end{equation}
 Since the RHS of the last equation of System~\eqref{finalCondition} is always positive for $N \geq 3$, we conclude that the all-maker equilibrium cannot be supported. Further deviations can be derived inductively, resulting in the equilibrium as stated in \citet{Budish2015}.
 
+\newpage
+
+\section{Collusive Equilibria}
+\label{sec:collusiveEq}
+
+In this section, we address the possibility of collusive behavior in our experimental markets.\footnote{We thank the editor as well as an anonymous referee for suggesting and encouraging us to include this discussion.} In short, our general finding is that human subjects in both market formats exhibited behavior more congruent with competitive, rather than collusive, play. This is consistent with the theoretical insight and empirical findings of existing literature, suggesting that cooperation becomes more difficult when a game has three or more players.
+% We discuss the FBA first, since it lies in the more standard paradigm of finitely repeated discrete time games. We do not derive an specific equilibrium prediction but discuss the form such an equilibrium would take if sustainable.
+% \subsection{Collusion in finitely repeated discrete-time (FBA)}
+
+In the FBA, which is a repeated game in discrete time, collusive play would imply all traders choosing to be a maker, at positive (arguably maximal) spread, and not buying speed services. Although there is no previous result on collusion that applies directly to this game \citetext{\citealp{Budish2015} focused only on the pure-strategy, instantaneous Nash Equilibrium}, theory and empirical work on Bertrand games and social dilemmas (e.g., prisoner's dilemma) relate to our setting and therefore provide relevant insights.
+
+In Bertrand games, as well as prisoner's dilemma (PD) games, where the Nash Equilibrium is inefficient from the perspective of players, cooperation is not possible if the stage game is repeated a finite number or times. Sub-game perfection implies non-cooperative behavior in the last period and inductively unravels cooperation in all earlier periods. 
+
+However, for the PD, as documented by \citet{Selten1986}, \citet{Friedman2012}, \citet{Embrey2018} and others, unraveling is limited. Indeed when players are able to adjust strategies "quickly" and the game has many periods, cooperation is commonly observed in two-person PD \citep{Friedman2012,Embrey2018}. Departures from non cooperative behavior have been attributed to different underlying features of decision making. As noted in \citet{Embrey2018}, cooperation in a PD stage game is predicted by models where: (1) there is uncertainty about the type and payoffs of other players \citep{Kreps1982}, (2) players generate \textit{epsilon equilibria} \citep{Radner1986,Friedman2012} by optimizing up to an epsilon distance from the maximal payoff, (3) learning is present \citep{Mengel2014}, and (4) traders exhibit limited forward reasoning \citep{Mantovani2016}. Some forms of social preferences could rationalize cooperative behavior as well. 
+
+PD games with $N>2$ tend to display low levels of cooperation \citep[e.g.][]{Barcelo2015}. For $N$-player-, finitely-repeated Bertrand games, empirical and theoretical insights are more sparse. In one shot encounters there is evidence of collusive behavior with two players,  but collusion is infrequently observed when there are three or more players \citep{Dufwenberg2000, Abbink2005, Abbink2008, Orzen2008, Potters2013}. Although there is evidence of some degree of cooperation in repeated two-player Bertrand games \citep[see e.g.][]{Argenton2012}, to the best of our knowledge there are no relevant studies with multiple players, fixed matching, and repetition over many periods. Therefore, the relative contribution of time horizon (in repeated games) and number of participants on cooperative play is an open question. Our experiments indicate that even with hundreds of periods, the number of players would be the prevailing force for shaping (the lack of) cooperation.
+
+The CDA, on the other hand, is a finite-horizon, continuous-time form of an undercutting game. The body of research on undercutting and cooperation games is small, but has relevant insights. Following the work of \citet{Radner1986} and \citet{Simon1989}, \citet{Friedman2012} formalize a model for a continuous-time prisoners dilemma (in addition to a fast-paced, discrete-time PD). They use the notion of epsilon-equilibrium to derive an equilibrium with near-perfect cooperation, where unraveling forces are limited if (1) players are willing to give up a tiny part of their profits and (2) they can react almost immediately. The logic is that the ability to react quickly reduces the risk of loss related to defection and makes a cooperative equilibrium easier to sustain. Their empirical findings are congruent with the existence of a high-cooperation equilibrium in a continuous-time PD. \citet{Park2014} formalizes a similar model where cooperation is sustained on heterogeneous reaction times that are private information. 
+
+Broad theoretical findings for cooperation in continuous-time PD games are, however, ambiguous. Although the literature above predicts full cooperation, a simple extension of a one-shot game predicts that cooperation would not exist, whereas an extended Folk Theorem gives broad predictions with differing degrees of cooperation. Empirically, the experiments of \citet{Horstmann2015} find reduced cooperation in continuous time, in direct contrast to the results of \citet{Friedman2012}. Their work, however, finds that an increase in the number of players substantially reduces cooperation, and is therefore consistent with the findings of the PD and Bertrand literature cited above.
+
+Together, these insights are consistent with our experimental findings: very little cooperation, most likely due to the number of players in each market (six).
+
+\subsection{Predicted Collusive Profits in FBA and CDA}
+Collusive behavior in the FBA would result in all traders choosing to be slow makers, quoting the maximal spread, $\bar{S} = 2$. 
+%We went ahead and checked what is percentage of time traders were at 90\% or more of fully cooperative behavior.
+%We find this occurred a small fraction of the trading time. We also reject the null hypothesis of $s_i=2$ at standard levels of significance. 
+%Another way to approach this question is by comparing the observed profits against the collusive levels.
+Under these circumstances, expected profits for each player are equal to: 
+\begin{align}
+\pi_{c}^{FBA} & = \frac{\bar{S}}{N} \cdot T \cdot E [N_I^e],
+\end{align}
+where $N$ is the number of traders in the market, $T$ is the number of batches (80 per 4-minute trading period),  and $E[N_I^e]$ is the expected absolute difference in the number of buy and sell investors that arrive within a single batch (recall that investors cross with each other before human participants in the FBA). More precisely, $N_I^e$ is the absolute value of a Skellam random variable and has expectation
+\begin{align}
+    E[N_I^e] & = \sum_{k=0}^{\infty} k P(|N_{sell}-N_{buy}| = k) \\
+    & = \sum_{k=1}^{\infty} 2k \sum_{l=k}^{\infty} P(N_{sell}=l) P(N_{buy}=l-k) \\
+    & = \sum_{k=1}^{\infty} 2k \sum_{l=k}^{\infty} \frac{\left(\lambda_I \tau\right)^{2l-k}}{l! (l-k)!} e^{-2 \lambda_I \tau},
+\end{align}
+where $N_{sell}$ and $N_{buy}$ are the number of selling and buying investors, respectively, that arrive in a batch and $\tau$ is the batch length (3 seconds in our setting).
+%\begin{align}
+%E[N_I^e] & = 1 - \sum_{n=1}^\infty \frac{ (\lambda \tau)^{2n}}{n!^2}  e^{2 \lambda \tau },
+%\end{align}
+In the configurations we study, $\pi_{c}^{FBA} = (27.93, 20.32, 35.19)$ ECUs for configurations 1--3, respectively.
+These values are substantially larger than the observed per period/player profits in our experiments, reported in Table~\ref{tab:Summary}: (0.435, 0.372,1.52) ECUs for configurations 1--3, respectively.
+
+Similar to the FBA, collusive behavior under the CDA would result in all traders choosing to be slow makers, quoting the maximal spread, $\bar{S} = 2$.
+%The percentage of time traders were at 90\% or more of fully cooperative behavior in CDA is again a small fraction of the trading time (-----). Again, we reject the null hypothesis of $s_i=2$ at standard levels of significance. We again compare the observed profits against the collusive levels. Under collusion in the CDA, where every player refrains from undercutting or become a sniper, expected profits are equal to: 
+In this case, expected profits for each player are equal to:
+\begin{align}
+\pi_{c}^{CDA} & = \frac{\bar{S}}{N} \cdot T \cdot \lambda_I, 
+\end{align}
+where $T$ is the number of seconds (240 per trading period) and $N$ is the number of traders in a market. In the configurations we consider, $\pi_{c}^{CDA} = (26.67, 16, 40)$ ECUs for configurations 1--3, respectively, and are likewise substantially larger than the observed values reported in Table~\ref{tab:Summary}: (0.0869, 0.603, 4.31) ECUs for configurations 1--3, respectively.
+
+\newpage
+
 \section{Equilibrium Market Statistics}
 \label{marketStats}
 
@@ -758,9 +837,10 @@ RMSD(P_t-V_t) & = \sigma \sqrt{ \left(1-e^{-\delta_{slow} \lambda_V}\right)  \le
 
 \noindent \emph{Proof}. Since all traders are makers and quote zero spreads in the FBA equilibrium, $P_t \neq V_t$ only in instances that the fundamental value changes in the period $(t-\delta_{slow},t]$ prior to the auction at time $t$, and when at least one investor arrives (otherwise there are no transactions). The probability of the former event is $1-e^{-\delta_{slow} \lambda_V}$ and the probability of the latter is $1-e^{-\tau \lambda_I}$. Thus, price changes are perfectly correlated with value changes and the standard deviation of $P_t -P_{t-1}$ should be identical to the standard deviation of $V_t-V_{t-1}$, but scaled by the aforementioned probabilities, which is the stated result.
 
+\newpage
+
 \section{Instructions}
 \label{sec:instructions}
-
 \includepdf[pages=-, pagecommand={}, scale=0.9]{CDA_instructions_for_paper1.pdf}
 
 \includepdf[pages=-, pagecommand={}, scale=0.9]{FBA_instructions_for_paper1.pdf}
